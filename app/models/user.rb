@@ -6,4 +6,11 @@ class User < ActiveRecord::Base
   has_many :followed_relationships, class_name: :Relationship, foreign_key: :follower_id
   has_many :followers, through: :follower_relationships, source: :follower
   has_many :followed_users, through: :followed_relationships, source: :followed_user
+
+  validates :password, length: { minimum: 5 }
+  validates :username, :presence => true
+  validates :username, length: { minimum: 5 }
+
+
+  has_secure_password
 end

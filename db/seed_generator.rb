@@ -1,6 +1,7 @@
 # jtbd: generate sample records for app
 
 require_relative '../config/environment'
+require 'bcrypt'
 
 # individual tables
 
@@ -23,7 +24,7 @@ tables = {
 fdelacruz = {
   :id => 1,
   :username => 'fdelacruz',
-  :password_digest => 'fdelacruz',
+  :password_digest => BCrypt::Password.create("fdelacruz").to_s,
   :created_at => Time.parse("2014/1/1"),
   :updated_at => Time.parse("2014/1/27")
 }
@@ -65,7 +66,7 @@ end
   users.push({
     :id => id,
     :username => username,
-    :password_digest => username,
+    :password_digest => BCrypt::Password.create(username).to_s,
     :created_at => created_at,
     :updated_at => random_time(created_at),
   })
