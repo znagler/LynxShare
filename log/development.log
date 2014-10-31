@@ -4,3 +4,84 @@ Started GET "/" for 127.0.0.1 at 2014-10-30 20:25:44 -0400
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/railties-4.0.3/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
 Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141031031310)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031310"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserLinks (20141031031723)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "user_links" ("id" serial primary key, "user_id" integer, "link_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031723"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinks (20141031032214)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "links" ("id" serial primary key, "url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032214"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinkTags (20141031032329)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "link_tags" ("id" serial primary key, "link_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032329"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTags (20141031032419)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032419"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRelationships (20141031032621)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "relationships" ("id" serial primary key, "follower_id" integer, "followed_user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.6ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (0.6ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_user_id" ON "relationships" ("followed_user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032621"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (21.3ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Fri, 31 Oct 2014 03:54:23 UTC +00:00], ["password_digest", "lol"], ["updated_at", Fri, 31 Oct 2014 03:54:23 UTC +00:00], ["username", "imuzz"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141031031310)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031310"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserLinks (20141031031723)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "user_links" ("id" serial primary key, "user_id" integer, "link_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031723"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinks (20141031032214)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "links" ("id" serial primary key, "url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032214"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinkTags (20141031032329)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "link_tags" ("id" serial primary key, "link_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032329"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTags (20141031032419)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032419"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRelationships (20141031032621)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "relationships" ("id" serial primary key, "follower_id" integer, "followed_user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.7ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_user_id" ON "relationships" ("followed_user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032621"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "users" ("created_at", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Fri, 31 Oct 2014 03:56:35 UTC +00:00], ["password_digest", "test"], ["updated_at", Fri, 31 Oct 2014 03:56:35 UTC +00:00], ["username", "admin"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mLink Load (0.8ms)[0m  [1mSELECT "links".* FROM "links" INNER JOIN "user_links" ON "links"."id" = "user_links"."link_id" WHERE "user_links"."user_id" = $1[0m  [["user_id", 1]]
