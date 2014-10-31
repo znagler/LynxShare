@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 
-  def index
-    
+  def show
+    @links = current_user.links
   end
 end
