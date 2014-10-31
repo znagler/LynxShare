@@ -1,5 +1,6 @@
 LynxShare::Application.routes.draw do
   resources :users
+  resources :links
 
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
