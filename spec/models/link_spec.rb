@@ -12,19 +12,18 @@ RSpec.describe Link, :type => :model do
     it { should have_many(:tags)}
     end
 
-    context "Validates URLs" do
+  context "Validates URLs" do
     it "should not allow empty URL" do
       FactoryGirl.build(:link, :url => "").should_not be_valid
     end
-    it "should not allow invalid" do
+    it "should not allow invalid URLs" do
       FactoryGirl.build(:link, :url => "google  com").should_not be_valid
       FactoryGirl.build(:link, :url => "googlecom").should_not be_valid
     end
 
-    it "should allow valid urls" do
+    it "should allow valid URLs" do
       FactoryGirl.build(:link, :url => "google.com").should be_valid
     end
-
   end
 
 end
