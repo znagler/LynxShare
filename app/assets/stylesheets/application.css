@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+.side-item {
+	height: 50px;
+}
+.side-item:hover { 
+    background-color: #BBBEBE;
+}
