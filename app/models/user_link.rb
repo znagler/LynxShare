@@ -1,4 +1,4 @@
 class UserLink < ActiveRecord::Base
   belongs_to :user 
-  # belongs_to :link 
+  belongs_to :link 
 end
