@@ -34,7 +34,7 @@ end
 
 gem 'rails_12factor', group: :production
 
-gem 'bcrypt'
+gem 'bcrypt-ruby'
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
