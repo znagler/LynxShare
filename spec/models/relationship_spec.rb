@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Relationship, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "Associates with followers" do
+    it { should belong_to(:follower)}
+    it { should belong_to(:followed_user)}
+  end
+
 end

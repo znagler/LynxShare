@@ -1,0 +1,179 @@
+# DON'T EDIT THIS, EDIT seed_generator.rb
+---
+:users:
+- :id: 1
+  :username: fdelacruz
+  :password_digest: $2a$10$CxZK8Mtu3dn7YyWTqAl4LeNIxt4JEUqk109bDiFv2BKk5xud9siNq
+  :created_at: 2014-01-01 00:00:00.000000000 -05:00
+  :updated_at: 2014-01-27 00:00:00.000000000 -05:00
+- :id: 2
+  :username: sbraun
+  :password_digest: $2a$10$tlo7Vf3a8XhoGBTHVU7e4.N/D8pUS0H/kiPfUCr44dh9d1BPx5jGi
+  :created_at: 2013-06-18 01:39:14.801976680 -04:00
+  :updated_at: 2013-10-14 19:43:01.977509498 -04:00
+- :id: 3
+  :username: gmetz
+  :password_digest: $2a$10$jjQl4mSL0cr9wETe.G8AkOzJpnfs/STJdqWX0GY0CmWYzBwe9U19m
+  :created_at: 2013-12-20 13:32:01.832510948 -05:00
+  :updated_at: 2014-02-23 21:42:07.921042680 -05:00
+- :id: 4
+  :username: bstroman
+  :password_digest: $2a$10$pmK48j.v7hxGhB1c2snHgeWppiO9D.Be/9pmNsku8lBSRFmY63AD2
+  :created_at: 2014-04-01 10:52:43.222112417 -04:00
+  :updated_at: 2014-10-14 10:15:15.091882705 -04:00
+- :id: 5
+  :username: bmann
+  :password_digest: $2a$10$6DTRzOCtbsXVYTpeiFZ4kOvkQVYwcTx4wCgRuPyvYhuNezsU.ldU.
+  :created_at: 2014-06-29 04:50:38.203834533 -04:00
+  :updated_at: 2014-09-22 12:22:21.497259855 -04:00
+- :id: 6
+  :username: gfeeney
+  :password_digest: $2a$10$QZzX.r0jU9Cylb.9h7reWu40okGoqFGZwq7582k6nN.ZqKO/K2932
+  :created_at: 2014-03-12 00:37:08.646499872 -04:00
+  :updated_at: 2014-07-06 16:06:50.930702924 -04:00
+- :id: 7
+  :username: carmstrong
+  :password_digest: $2a$10$Z7McFRmZNBdCfnQ4MtuBj..0EaJBh.Fe3MyylR47vMuTwG7pC5gCe
+  :created_at: 2013-10-14 16:24:14.285697937 -04:00
+  :updated_at: 2014-10-21 16:13:47.023736476 -04:00
+- :id: 8
+  :username: ehalvorson
+  :password_digest: $2a$10$pG6zi665.IyMybaQZs6JSuZMdmES6nxmu14KXFB84Bju955Xztifm
+  :created_at: 2013-08-16 17:23:43.103978157 -04:00
+  :updated_at: 2013-11-12 12:15:55.209105730 -05:00
+- :id: 9
+  :username: tparisian
+  :password_digest: $2a$10$y3rOQtqmJrrcgdPYwu7MW.zj24cUo2Uxt61W8N8vMBoJ6jFSt9II.
+  :created_at: 2014-01-02 13:51:43.724978923 -05:00
+  :updated_at: 2014-10-05 05:25:38.274127006 -04:00
+- :id: 10
+  :username: jrippin
+  :password_digest: $2a$10$qeM9zOT3k9ZPh6lPtUtddOfQvDqWFLbDu0Ybqj.IOn3dJxTo.PY5O
+  :created_at: 2013-06-28 20:37:21.449607849 -04:00
+  :updated_at: 2014-08-07 11:57:11.276039600 -04:00
+:links:
+- :id: 1
+  :url: http://example.com/rails.html
+  :created_at: 2014-01-02 00:00:00.000000000 -05:00
+- :id: 2
+  :url: http://wolff.net/electa.feeney
+  :created_at: 2014-08-11 13:05:43.644180059 -04:00
+- :id: 3
+  :url: http://moenmcdermott.info/josefa
+  :created_at: 2013-08-17 20:39:32.086835622 -04:00
+- :id: 4
+  :url: http://nolanbrown.com/brown_hoeger
+  :created_at: 2014-10-18 21:16:41.268935203 -04:00
+- :id: 5
+  :url: http://okeefe.biz/mohamed
+  :created_at: 2013-10-01 13:48:27.885947942 -04:00
+- :id: 6
+  :url: http://schmittbarrows.info/theresa
+  :created_at: 2014-03-08 02:12:40.800420999 -05:00
+- :id: 7
+  :url: http://hegmann.biz/harmon.funk
+  :created_at: 2013-09-22 13:18:39.236152648 -04:00
+- :id: 8
+  :url: http://powlowski.info/ansley
+  :created_at: 2013-01-28 02:08:38.531647682 -05:00
+- :id: 9
+  :url: http://bruen.com/katlyn
+  :created_at: 2013-07-07 01:52:17.572649478 -04:00
+- :id: 10
+  :url: http://kuhn.biz/wendy
+  :created_at: 2014-10-02 12:16:07.063740968 -04:00
+:tags:
+- :id: 1
+  :name: rails
+- :id: 2
+  :name: primary
+- :id: 3
+  :name: wireless
+- :id: 4
+  :name: back-end
+- :id: 5
+  :name: back-end
+- :id: 6
+  :name: virtual
+- :id: 7
+  :name: haptic
+- :id: 8
+  :name: cross-platform
+- :id: 9
+  :name: back-end
+- :id: 10
+  :name: redundant
+:user_links:
+- :id: 2
+  :user_id: 8
+  :link_id: 5
+  :created_at: 2013-11-03 04:47:11.381176471 -05:00
+  :updated_at: 2014-10-01 09:23:32.333304643 -04:00
+- :id: 3
+  :user_id: 6
+  :link_id: 6
+  :created_at: 2014-05-26 08:49:39.455996036 -04:00
+  :updated_at: 2014-08-29 00:49:03.281156539 -04:00
+- :id: 4
+  :user_id: 7
+  :link_id: 8
+  :created_at: 2014-07-26 07:18:05.373929500 -04:00
+  :updated_at: 2014-09-13 18:28:08.772096872 -04:00
+- :id: 5
+  :user_id: 1
+  :link_id: 10
+  :created_at: 2014-10-08 11:06:41.137772560 -04:00
+  :updated_at: 2014-10-26 18:02:38.444768667 -04:00
+- :id: 6
+  :user_id: 5
+  :link_id: 7
+  :created_at: 2014-08-02 07:08:01.973992109 -04:00
+  :updated_at: 2014-10-01 14:20:00.831234693 -04:00
+- :id: 7
+  :user_id: 4
+  :link_id: 2
+  :created_at: 2014-10-18 04:26:37.193254470 -04:00
+  :updated_at: 2014-10-29 13:05:56.476127147 -04:00
+- :id: 8
+  :user_id: 9
+  :link_id: 3
+  :created_at: 2014-07-23 21:51:12.024065971 -04:00
+  :updated_at: 2014-10-25 22:44:38.319019317 -04:00
+- :id: 9
+  :user_id: 10
+  :link_id: 1
+  :created_at: 2014-08-05 04:13:40.198134422 -04:00
+  :updated_at: 2014-10-07 06:48:31.355567932 -04:00
+- :id: 10
+  :user_id: 3
+  :link_id: 9
+  :created_at: 2014-09-08 23:22:10.655833482 -04:00
+  :updated_at: 2014-09-24 09:14:47.660781860 -04:00
+:link_tags:
+- :id: 2
+  :link_id: 8
+  :tag_id: 1
+- :id: 3
+  :link_id: 2
+  :tag_id: 7
+- :id: 4
+  :link_id: 4
+  :tag_id: 10
+- :id: 5
+  :link_id: 6
+  :tag_id: 2
+- :id: 6
+  :link_id: 10
+  :tag_id: 5
+- :id: 7
+  :link_id: 5
+  :tag_id: 6
+- :id: 8
+  :link_id: 3
+  :tag_id: 4
+- :id: 9
+  :link_id: 1
+  :tag_id: 3
+- :id: 10
+  :link_id: 9
+  :tag_id: 8
