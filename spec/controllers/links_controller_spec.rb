@@ -12,6 +12,6 @@ RSpec.describe LinksController, :type => :controller do
     #   # expect(assigns(:sum)).to eq(22)
     # end
 
-  end
+  # end
 
 end
