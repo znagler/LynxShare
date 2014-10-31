@@ -1,0 +1,5 @@
+<h2> Links:</h2>
+
+<% @links.each do |link| %>
+	<%= link_to link.url, link_path(link) %>
+<% end %>
