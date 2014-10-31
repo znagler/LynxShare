@@ -1,5 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Link, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  context "Associates with users" do
+  it { should have_many(:user_links)}
+  it { should have_many(:users)}
+  end
+
+  context "Associates with tags" do
+  it { should have_many(:link_tags)}
+  it { should have_many(:tags)}
+  end
+
+
 end
