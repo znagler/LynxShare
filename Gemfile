@@ -34,6 +34,8 @@ end
 
 gem 'rails_12factor', group: :production
 
+gem 'bcrypt'
+
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
   gem "factory_girl_rails", "~> 4.4.1"
@@ -48,7 +50,6 @@ group :test do
   gem 'shoulda-matchers', require: false
 end
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
