@@ -34,6 +34,8 @@ end
 
 gem 'rails_12factor', group: :production
 
+gem 'pry'
+
 gem 'bcrypt-ruby'
 
 group :development, :test do
