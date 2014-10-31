@@ -141,3 +141,141 @@ Migrating to CreateRelationships (20141031032621)
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141031031310)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031310"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserLinks (20141031031723)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "user_links" ("id" serial primary key, "user_id" integer, "link_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031031723"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinks (20141031032214)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "links" ("id" serial primary key, "url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032214"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLinkTags (20141031032329)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "link_tags" ("id" serial primary key, "link_id" integer, "tag_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032329"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTags (20141031032419)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032419"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRelationships (20141031032621)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "relationships" ("id" serial primary key, "follower_id" integer, "followed_user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.6ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36m (0.6ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_user_id" ON "relationships" ("followed_user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141031032621"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-31 11:45:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x007f8615dd15d8>:0x007f8615dda4d0>):
+     9:   <%= f.submit "Log in", class: "btn btn-primary" %>
+    10: <% end %>
+    11: 
+    12: <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  app/views/sessions/new.html.erb:12:in `_app_views_sessions_new_html_erb__4512981910778953501_70106934727580'
+
+
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-31 11:45:29 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 739ms (Views: 738.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/links.css?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/links.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-31 11:45:30 -0400
+
+
+Started POST "/login" for 127.0.0.1 at 2014-10-31 11:50:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C1V+xpftLVPpl+sA2zDdmwfzSSUaY3oQmCuVxz5pPs0=", "session"=>{"email"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 7ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user.rb:10:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2014-10-31 11:50:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C1V+xpftLVPpl+sA2zDdmwfzSSUaY3oQmCuVxz5pPs0=", "session"=>{"email"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 5ms
+
+Gem::LoadError (bcrypt-ruby is not part of the bundle. Add it to Gemfile.):
+  app/models/user.rb:10:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/iMuzz/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
