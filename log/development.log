@@ -85,3 +85,14 @@ Migrating to CreateRelationships (20141031032621)
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
   [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
   [1m[36mLink Load (0.8ms)[0m  [1mSELECT "links".* FROM "links" INNER JOIN "user_links" ON "links"."id" = "user_links"."link_id" WHERE "user_links"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", Fri, 31 Oct 2014 03:57:25 UTC +00:00], ["updated_at", Fri, 31 Oct 2014 03:57:25 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mLink Load (0.7ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC LIMIT 1[0m
+  [1m[35mTag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "link_tags" ON "tags"."id" = "link_tags"."tag_id" WHERE "link_tags"."link_id" = $1  [["link_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 31 Oct 2014 03:57:49 UTC +00:00], ["name", "foo"], ["updated_at", Fri, 31 Oct 2014 03:57:49 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mTag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT 1
+  [1m[36mLink Load (0.7ms)[0m  [1mSELECT "links".* FROM "links" INNER JOIN "link_tags" ON "links"."id" = "link_tags"."link_id" WHERE "link_tags"."tag_id" = $1[0m  [["tag_id", 1]]
+  [1m[35mRelationship Load (0.6ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."followed_user_id" = $1  [["followed_user_id", 1]]
