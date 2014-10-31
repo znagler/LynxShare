@@ -48,7 +48,7 @@ group :test do
   gem 'shoulda-matchers', require: false
 end
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
