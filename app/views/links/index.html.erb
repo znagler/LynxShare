@@ -1,45 +1,4 @@
-<!-- <div class="ui red vertical demo thin sidebar menu bg-lighter-gray">
-  <a href="/" class="item">
-    <div class="side-item">
-      <center>
-          <i class="home icon"></i>
-          Home
-      </center>
-    </div>
-  </a>
 
-  <a href="/" class="item"> 
-    <div class="side-item"> 
-      <center>
-          Following
-      </center>
-    </div>
-  </a>
-
-  <a href="/links/new" class="item" >
-    <div class="side-item"> 
-      <center>
-          Add Link
-      </center>
-    </div>
-  </a>
-
-  <a href="/links" class="item">
-    <div class="side-item"> 
-      <center>
-          Tags
-      </center>
-  </div>
-  </a>
-
-   <a href="/tags" class="item">
-    <div class="side-item"> 
-      <center>
-          People
-      </center>
-  </div>
-  </a>
- -->
 <h2> Links:</h2>
 <% @links.each do |link| %>
 	<%= link_to link.url, link.url %> <br>

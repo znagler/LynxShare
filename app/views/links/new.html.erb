@@ -1,4 +1,6 @@
 <!-- Form for createing a new link -->
 <%= form_for @link do |form| %>
-	<%= form.text_field :url %>
+	<%= form.text_field :url, :placeholder => "Url" %> <br>
+	<input type="text" name="tags" placeholder="#tags"> <br>
+	<%= form.submit %>
 <% end %>
