@@ -55,4 +55,6 @@ end
   LinkTag.create(tag_id: Tag.all.sample.id, link_id: Link.all.sample.id)
 end
 
-
+10.times do 
+  Relationship.create(follower: User.find_by(username: 'admin'), followed_user_id: rand(2..20))
+end
