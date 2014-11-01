@@ -16,7 +16,7 @@
 //= require_tree .
 
 $( document ).ready(function() {
-	showSidebar()
+	// showSidebar()
 });
 
 function showSidebar() {
