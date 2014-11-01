@@ -3,4 +3,5 @@ class Tag < ActiveRecord::Base
   has_many :links, through: :link_tags
   validates :name, :presence => true
   validates :name, length: { minimum: 2 }
+  validates_uniqueness_of :name
 end

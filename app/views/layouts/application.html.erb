@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="ui red vertical demo thin sidebar menu bg-lighter-gray show">
-  <a href="/" class="item">
+  <a href="/links" class="item">
     <div class="side-item">
       <center>
           <i class="home icon"></i>
@@ -17,10 +17,10 @@
     </div>
   </a>
 
-  <a href="/" class="item"> 
+  <a href="/users" class="item"> 
     <div class="side-item"> 
       <center>
-          Following
+          Network
       </center>
     </div>
   </a>
@@ -33,21 +33,13 @@
     </div>
   </a>
 
-  <a href="/links" class="item">
+  <a href="/tags" class="item">
     <div class="side-item"> 
       <center>
           Tags
       </center>
   </div>
   </a>
-
-   <a href="/tags" class="item">
-    <div class="side-item"> 
-      <center>
-          People
-      </center>
-  	</div>
-  </a>  
 </div>
 <script>$('.demo.sidebar').sidebar('toggle')</script>
 <%= yield %>

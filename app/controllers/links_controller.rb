@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-
+  include LinksHelper
+  
   def index
     @links = current_user.links
   end
@@ -9,11 +10,15 @@ class LinksController < ApplicationController
   end
 
   def create
-    binding.pry
-    current_user.links.create(link_params)
+    link = current_user.links.create(link_params)
+    link.create_tags(format_tags(params[:tags]))
     redirect_to '/links'
   end
 
+  def destroy
+    Link.find(params[:id]).destroy
+    redirect_to '/links'
+  end
   private
 
   def link_params

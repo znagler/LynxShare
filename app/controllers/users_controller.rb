@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = current_user.followed_users
   end
 
   def create
