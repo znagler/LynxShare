@@ -72,7 +72,7 @@ end
   })
 end
 
-2.upto(10).each do |id|
+2.upto(50).each do |id|
   links.push({
     :id => id,
     :url => Faker::Internet.url,
@@ -80,7 +80,7 @@ end
   })
 end
 
-2.upto(10).each do |id|
+2.upto(50).each do |id|
   tags.push({
     :id => id,
     :name => Faker::Hacker.adjective,
