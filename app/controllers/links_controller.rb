@@ -15,6 +15,10 @@ class LinksController < ApplicationController
     redirect_to '/links'
   end
 
+  def destroy
+    Link.find(params[:id]).destroy
+    redirect_to '/links'
+  end
   private
 
   def link_params
