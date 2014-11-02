@@ -1,5 +1,8 @@
-<ul>
+<center><ul>
   <% tags.each do |tag| %>
+  <div class="card">
     <li> <%= link_to add_hashtag(tag.name), tag_path(tag) %> </li>
+  </div>
   <% end %>
 </ul>
+</center>
