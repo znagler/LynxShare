@@ -8,14 +8,27 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_self
  *= require_tree .
  */
 
+.field-light {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: red
+}
+
+.logo {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	height: 50px;
+}
+
 .side-item {
 	height: 50px;
 }
-.side-item:hover { 
+.side-item:hover {
     background-color: #BBBEBE;
 }
 li {
@@ -24,12 +37,19 @@ li {
 #linkzone {
 	width: 750px
 }
+
+h2{
+	text-align: center
+}
 .card {
-	width: 100%
 	background:#FFF;
 	border:1px solid #AAA;
 	border-bottom:2px solid #BBB;
 	padding:10px;
 	margin:15px;
 	overflow:hidden;
+}
+
+.container{
+	width:1000px
 }

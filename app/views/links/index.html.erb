@@ -1,5 +1,9 @@
-<input data-search="linkSearchBar" placeholder="find links...">
+<div class="container">
+  <center>
 <h2> Links:</h2>
+<input data-search="linkSearchBar" placeholder="find links..." type="text" class="field-light">
 <div id ="linkzone">
 <%= render(:partial => "link_container", :locals => {:links => @links}) %>
+</div>
+</center>
 </div>

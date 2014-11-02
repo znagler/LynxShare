@@ -5,10 +5,16 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/4.1.4/basscss.min.css" rel="stylesheet">
+
+
 </head>
 <body>
 
 <div class="ui red vertical demo thin sidebar menu bg-lighter-gray show">
+  <div class="logo"><center>
+    <i class="fa fa-check-circle-o"></i>
+    LynxShare</center></div>
   <%= render partial: "layouts/welcome" %>
   <a href="/links" class="item">
     <div class="side-item">
@@ -57,6 +63,7 @@
 <% if session[:user_id] != nil%>
 <script>$('.demo.sidebar').sidebar('toggle')</script>
 <% end %>
+
 <%= yield %>
 
 </body>
