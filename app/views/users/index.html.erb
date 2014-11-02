@@ -1,7 +1,9 @@
-<input data-search="userSearchBar" placeholder="find users...">
+<div class="container">
+<center>
 <h2> Discover Users:</h2>
+<input data-search="userSearchBar" placeholder="find users..."  type="text" class="field-light">
 <div id ="userzone">
 <%= render(:partial => "user_container", :locals => {:users => @user_array, :relationship => @relationship}) %>
 </div>
-
-
+</center>
+</div>
