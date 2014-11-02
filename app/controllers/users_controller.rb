@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  include TagsHelper
 
   def new
     @user = User.new
@@ -19,6 +20,11 @@ class UsersController < ApplicationController
     else
       render 'new', status: 422
     end
+  end
+
+  def search
+    tag_array = fetch_tags(10,current_user.id,params["currentString"])
+    render(:partial => "tag_container", :locals => {:tags => tag_array})
   end
 
   private

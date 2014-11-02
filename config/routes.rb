@@ -3,9 +3,10 @@ LynxShare::Application.routes.draw do
   resources :links
   resources :tags
   resources :relationships
-  
+
   post '/link_search' => 'links#search'
   post '/tag_search' => 'tags#search'
+  post '/user_search' => 'user#search'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
