@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def index
+  def index #show users that you are not following
     @user_array = fetch_users(10,current_user.id)
     @relationship = Relationship.new
 
