@@ -43,7 +43,7 @@ width: 100px;
 li {
 	list-style-type: none;
 }
-#linkzone {
+#linkzone, #tagzone, #userzone {
 	width: 750px
 }
 
