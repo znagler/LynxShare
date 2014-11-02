@@ -13,6 +13,6 @@ module TagsHelper
       loaded = true
     end
     tags.uniq
-
+ 
   end
 end
