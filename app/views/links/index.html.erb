@@ -1,7 +1,5 @@
 <input data-search="searchBar">
-
-
 <h2> Links:</h2>
-<% @links.each do |link| %>
-  <%= render :partial => "link", :locals => {:link => link} %>
-<% end %>
+<div id ="linkzone">
+<%= render(:partial => "link_container", :locals => {:links => @links}) %>
+</div>
