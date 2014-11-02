@@ -10,7 +10,7 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
-  def ajax
+  def search
     link_array = fetch_links(10,current_user.id,params["currentString"])
     render(:partial => "link_container", :locals => {:links => link_array})
   end
