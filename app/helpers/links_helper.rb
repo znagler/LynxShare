@@ -21,7 +21,6 @@ module LinksHelper
 
   end
 
-
   def pad(string)
     " " + string
   end
