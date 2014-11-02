@@ -1,0 +1,8 @@
+<div class="container-centered">
+  <center>
+    <div id="linkzone">
+<h2> <%=add_hashtag(@tag.name)%> </h2>
+<%= render(:partial => "/links/link_container", :locals => {:links => @links}) %>
+  </div>
+</center>
+</div>
