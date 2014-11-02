@@ -4,7 +4,8 @@ LynxShare::Application.routes.draw do
   resources :tags
   resources :relationships
   
-  post '/search' => 'links#ajax'
+  post '/link_search' => 'links#search'
+  post '/tag_search' => 'tags#search'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
