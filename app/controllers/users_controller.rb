@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def index #show users that you are not following
-    @user_array = fetch_users(10,current_user.id)
+    # @user_array = fetch_users(10,current_user.id)
+    @user_array = current_user.unfollowed_users
     @relationship = Relationship.new
 
     # @users = User.all.take(10)

@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   validates :username, :presence => true
   validates :username, length: { minimum: 5 }
 
-
   has_secure_password
+
+  def unfollowed_users(num_users = 10)
+    followed_user_ids = self.followed_users.pluck(:id) << self.id
+    User.where.not(id: followed_user_ids).take(num_users)
+  end
 end
