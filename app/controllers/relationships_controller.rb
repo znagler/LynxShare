@@ -2,6 +2,7 @@ class RelationshipsController < ApplicationController
 
   def index
     @users = current_user.followed_users.uniq
+    @relationship = Relationship.new
   end
 
   def create
@@ -9,4 +10,7 @@ class RelationshipsController < ApplicationController
     redirect_to '/relationships'
   end
 
+  def delete
+    binding.pry
+  end
 end
