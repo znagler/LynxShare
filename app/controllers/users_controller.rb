@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  include UsersHelper
 
   def new
     @user = User.new
   end
 
   def index
-    @users = User.all.take(10)
+    @user_array = fetch_users(10,current_user.id)
     @relationship = Relationship.new
+
+    # @users = User.all.take(10)
+  end
+
+  def search
+    user_array = fetch_users(10,current_user.id,params["currentString"])
+    # binding.pry
+    @relationship = Relationship.new
+    render(:partial => "user_container", :locals => {:users => user_array, :relationship => @relationship})
   end
 
   def create
