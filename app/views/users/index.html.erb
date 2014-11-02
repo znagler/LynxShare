@@ -1,11 +1,7 @@
-<ul>
-	<% @users.each do |user| %>
-		<li> 
-		<%= link_to user.username, user_path(user)%>
-		<%= form_for(@relationship) do |f| %>
-			<%= f.hidden_field :user_id, :value => user.id %>
-			<%= f.submit "follow" %>			
-		<% end %>
-		</li>
-	<% end %>
-</ul>
+<input data-search="userSearchBar" placeholder="find users...">
+<h2> Discover Users:</h2>
+<div id ="userzone">
+<%= render(:partial => "user_container", :locals => {:users => @user_array, :relationship => @relationship}) %>
+</div>
+
+
