@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = current_user.followed_users
+    @users = User.all.take(10)
+    @relationship = Relationship.new
   end
 
   def create
