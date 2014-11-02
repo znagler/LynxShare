@@ -1,5 +1,5 @@
 console.log("reading file")
-$(document).on('ready page:load',(function() {
+$( document ).ready(function() {
   console.log("doc ready")
   setEventListeners()
 });
