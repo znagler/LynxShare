@@ -9,6 +9,7 @@
 <body>
 
 <div class="ui red vertical demo thin sidebar menu bg-lighter-gray show">
+  <%= render partial: "layouts/welcome" %>
   <a href="/links" class="item">
     <div class="side-item">
       <center>
@@ -18,8 +19,8 @@
     </div>
   </a>
 
-  <a href="/relationships" class="item"> 
-    <div class="side-item"> 
+  <a href="/relationships" class="item">
+    <div class="side-item">
       <center>
           Network
       </center>
@@ -39,17 +40,23 @@
       <center>
           Tags
       </center>
-  </div> 
+  </div>
 
   <a href="/users" class="item">
-    <div class="side-item"> 
+    <div class="side-item">
       <center>
           People
       </center>
   </div>
   </a>
+
+  <%= render partial: "layouts/logout" %>
+
+
 </div>
+<% if session[:user_id] != nil%>
 <script>$('.demo.sidebar').sidebar('toggle')</script>
+<% end %>
 <%= yield %>
 
 </body>

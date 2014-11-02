@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def index
-    @users = current_user.followed_users
+    @users = current_user.followed_users.uniq
   end
 
   def create
