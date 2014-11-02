@@ -18,3 +18,6 @@
 .side-item:hover { 
     background-color: #BBBEBE;
 }
+li {
+	list-style-type: none;
+}

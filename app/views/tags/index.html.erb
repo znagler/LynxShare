@@ -1,6 +1,6 @@
 <input data-search="searchBar">
 <ul>
 	<% @tags.each do |tag| %>
-		<li> <%= tag.name %> </li>
+		<li> <%= link_to add_hashtag(tag.name), tag_path(tag) %> </li>
 	<% end %>
 </ul>
