@@ -1,5 +1,11 @@
+<div class="container">
+  <center>
 <ul>
 	<% @users.each do |user| %>
+  <div class="card">
 		<li> <%= link_to user.username, user_path(user)%> </li>
+  </div>
 	<% end %>
 </ul>
+</center>
+</div>

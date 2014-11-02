@@ -5,7 +5,7 @@
 <%= form_for @link do |form| %>
 	<%= form.text_field :url, :placeholder => "Url" %> <br>
 	<input type="text" name="tags" placeholder="#tags"> <br>
-	<%= form.submit %>
+	<%= form.submit(:class => 'button-blue-outline mb1') %>
 <% end %>
 </center>
 </div>
