@@ -1,12 +1,20 @@
 class LinksController < ApplicationController
   include LinksHelper
-  
+
   def index
     @links = current_user.links
   end
 
   def new
     @link = Link.new
+  end
+
+  def ajax
+    puts "*"*100
+    puts params["currentString"]
+    puts "*"*100
+    data = fetch_links(10,2)
+    render :json => data
   end
 
   def create
