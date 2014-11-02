@@ -1,6 +1,6 @@
 <% links.each do |link| %>
-  <%= link_to link.url, link.url, class: "link" %> <br>
+   <br><%= link_to link.url, link.url, class: "link" %> 
     <% link.tags.each do |tag| %>
-      <%= link_to add_hashtag(tag.name), "/tags/#{tag.id}", class: "tag" %>
+     <%= link_to add_hashtag(tag.name), "/tags/#{tag.id}", class: "tag" %> 
     <% end %>
 <% end %>
