@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+a,h2{
+	font-family: "PT Sans"
+}
+
 .field-light {
 	margin-left: auto;
 	margin-right: auto;
@@ -24,8 +28,14 @@
 	height: 50px;
 }
 
+/*.logo_image {
+	margin:auto;
+height: 100px;
+width: 100px;
+}*/
+
 .side-item {
-	height: 50px;
+	height: 30px;
 }
 .side-item:hover {
     background-color: #BBBEBE;
@@ -38,6 +48,7 @@ li {
 }
 
 h2{
+	color: #F9663C;
 	text-align: center
 }
 .card {
