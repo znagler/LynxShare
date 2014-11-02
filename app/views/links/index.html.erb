@@ -1,8 +1,7 @@
+<input data-search="searchBar">
+
 
 <h2> Links:</h2>
 <% @links.each do |link| %>
-	<%= link_to link.url, link.url %> <br>
-		<% link.tags.each do |tag| %>
-			<%= link_to add_hashtag(tag.name), "/tags/#{tag.id}" %>
-		<% end %>	
+  <%= render :partial => "link", :locals => {:link => link} %>
 <% end %>
