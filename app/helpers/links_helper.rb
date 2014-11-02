@@ -4,15 +4,24 @@ module LinksHelper
     "#" + tag
   end
 
-  def fetch_links(capacity,int2)
-    load_size = 0
-    load = {}
-    until load_size > capacity do
-      load["item#{load_size}"] = "example_url #{load_size}"
-      load_size += 1
+  def fetch_links(capacity,user_id,str = "")
+    loaded = false
+    links = []
+    while !loaded do
+      User.all[user_id].links.each do |link|
+        links.push(link) if link.url.include?(str)
+        if links.size == capacity
+          loaded = true
+          break
+        end
+      end
+      loaded = true
     end
-    load
+    links
+
   end
+
+
   def pad(string)
     " " + string
   end
@@ -23,5 +32,9 @@ module LinksHelper
 
   def format_tags(words_array)
     remove_hashtags(pad(words_array).scan(/[#\s](\S*)/).flatten)
+  end
+
+  def get_link_card(link)
+    render :partial => "link", :locals => {:link => link}
   end
 end
