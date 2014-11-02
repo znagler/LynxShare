@@ -1,10 +1,9 @@
 module UsersHelper
-    def fetch_users(capacity,user_id,str = "")
+  def fetch_users(capacity,user_id,str = "")
     loaded = false
     users = []
     while !loaded do
-      User.all.each do |user|
-        # binding.pry
+      current_user.unfollowed_users.each do |user|
         users.push(user) if user.username.include?(str) && user.id != user_id
         if users.size == capacity
           loaded = true
@@ -13,8 +12,6 @@ module UsersHelper
       end
       loaded = true
     end
-    # binding.pry
     users.uniq
-
   end
 end

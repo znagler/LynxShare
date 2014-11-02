@@ -1,11 +1,18 @@
-<div class="container">
-  <center>
-<ul>
-	<% @users.each do |user| %>
-  <div class="card">
-		<li> <%= link_to user.username, user_path(user)%> </li>
-  </div>
-	<% end %>
-</ul>
-</center>
+<div class="container-centered">
+	<center>
+		<ul>
+			<% @users.each do |user| %>
+			<div class="card" >
+				<li> 
+					<% @relationship = Relationship.find_by(follower_id: session[:user_id], followed_user: user) %>
+					<%= link_to user.username, user_path(user), class: "red"%> 
+					<%= form_for(@relationship, method: :delete) do |f| %>
+					<%= f.hidden_field :user_id, :value => user.id %>
+					<%= f.submit "unfollow", :class => 'button-blue-outline mb1' %>			
+					<% end %>
+				</li>
+			</div>
+			<% end %>
+		</ul>
+	</center>
 </div>
