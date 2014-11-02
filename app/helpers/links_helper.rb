@@ -17,7 +17,7 @@ module LinksHelper
       end
       loaded = true
     end
-    links
+    links.uniq
 
   end
 
