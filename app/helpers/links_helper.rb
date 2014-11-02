@@ -8,7 +8,7 @@ module LinksHelper
     loaded = false
     links = []
     while !loaded do
-      User.all[user_id].links.each do |link|
+      current_user.links.each do |link|
         links.push(link) if link.url.include?(str)
         if links.size == capacity
           loaded = true
@@ -18,7 +18,6 @@ module LinksHelper
       loaded = true
     end
     links.uniq
-
   end
 
   def pad(string)

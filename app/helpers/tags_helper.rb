@@ -3,7 +3,7 @@ module TagsHelper
     loaded = false
     tags = []
     while !loaded do
-      User.all[user_id].tags.each do |tag|
+      current_user.tags.each do |tag|
         tags.push(tag) if tag.name.include?(str)
         if tags.size == capacity
           loaded = true
