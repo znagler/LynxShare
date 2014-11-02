@@ -1,6 +1,7 @@
 LynxShare::Application.routes.draw do
   resources :users
   resources :links
+  resources :tags
 
   post '/search' => 'links#ajax'
   get 'signup' => 'users#new'
