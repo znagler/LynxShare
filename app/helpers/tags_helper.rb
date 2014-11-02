@@ -12,7 +12,7 @@ module TagsHelper
       end
       loaded = true
     end
-    tags
+    tags.uniq
 
   end
 end
