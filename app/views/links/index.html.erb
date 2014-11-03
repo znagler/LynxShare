@@ -1,7 +1,7 @@
 <div class="container-centered">
   <center>
     <h2>Links</h2>
-      <input data-search="linkSearchBar" placeholder="find links..." type="text" class="field-light">
+    <%= render partial: "search" %>
     <div id ="linkzone">
       <%= render(:partial => "link_container", :locals => {:links => @links}) %>
     </div>
