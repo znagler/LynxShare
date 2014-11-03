@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body class="thezone">
@@ -15,11 +16,11 @@
 <%= image_tag("lynx2.png", class: "logo_image" )%>
 
   <%= render partial: "layouts/welcome" %>
+
   <a href="/links" class="item">
     <div class="side-item">
       <center>
-          <i class="home icon"></i>
-          Home
+          <i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
       </center>
     </div>
   </a>
