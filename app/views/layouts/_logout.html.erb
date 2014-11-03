@@ -1,10 +1,9 @@
-  <% if @current_user %>
+<% if @current_user %>
   <a href="/" class="item">
     <div class="side-item">
       <center>
-
-    <i class="fa fa-sign-out"></i><%= link_to " Sign out", signout_path, method: :delete, class: "right-red" %>
+        <i class="fa fa-sign-out"></i><%= link_to " Sign out", signout_path, method: :delete, class: "right-red" %>
       </center>
-  </div>
+    </div>
   </a>
 <% end %>

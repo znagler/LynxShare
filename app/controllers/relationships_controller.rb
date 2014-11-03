@@ -2,7 +2,6 @@ class RelationshipsController < ApplicationController
 
   def index
     @users = current_user.followed_users
-    @relationship = Relationship.new
   end
 
   def create

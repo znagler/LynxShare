@@ -2,20 +2,7 @@
 	<center>
 		<h2>Check Out Your Network</h2>
 
-			<div id="userzone">
-			<% @users.uniq.each do |user| %>
-			<div class="card" >
-
-					<% @relationship = Relationship.find_by(follower_id: session[:user_id], followed_user: user) %>
-					<%= link_to user.username, "relationships/#{user.id}", class: "red"%>
-					<%= form_for(@relationship, method: :delete) do |f| %>
-					<%= f.hidden_field :user_id, :value => user.id %>
-					<%= f.submit "unfollow", :class => 'button-blue-outline mb1' %>
-					<% end %>
-
-			</div>
-			<% end %>
-				</div>
+		<%= render partial: "followers" %>
 
 	</center>
 </div>
