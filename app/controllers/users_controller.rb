@@ -7,11 +7,8 @@ class UsersController < ApplicationController
   end
 
   def index #show users that you are not following
-    # @user_array = fetch_users(10,current_user.id)
     @user_array = current_user.unfollowed_users.uniq
     @relationship = Relationship.new
-
-    # @users = User.all.take(10)
   end
 
   def show
@@ -20,7 +17,6 @@ class UsersController < ApplicationController
 
   def search
     user_array = fetch_users(10,current_user.id,params["currentString"])
-    # binding.pry
     @relationship = Relationship.new
     render(:partial => "user_container", :locals => {:users => user_array, :relationship => @relationship})
   end

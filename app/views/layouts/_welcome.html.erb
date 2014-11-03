@@ -3,7 +3,7 @@
     <div>
       <center>
 
-    Welcome <%= User.find(session[:user_id]).username %>
+    <p>Welcome <%= User.find(session[:user_id]).username.capitalize %></p>
       </center>
   </div>
 

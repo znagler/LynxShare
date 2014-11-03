@@ -9,15 +9,15 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-<body class="thezone">
+<body style="background-color: #ECF0F1;">
 
 <% if session[:user_id] != nil%>
-<div class="ui red vertical demo thin sidebar menu bg-lighter-gray active">
-<%= image_tag("lynx2.png", class: "logo_image" )%>
+<div class="ui red vertical demo thin sidebar menu active custom-bar">
+<%= image_tag("lynx.png", class: "logo_image" )%>
 
   <%= render partial: "layouts/welcome" %>
 
-  <a href="/links" class="item">
+  <a href="/links" class="item" style="color: #E74C3C">
     <div class="side-item">
       <center>
           <i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
@@ -28,7 +28,7 @@
   <a href="/relationships" class="item">
     <div class="side-item">
       <center>
-          Network
+          <i class="fa fa-globe"> Network</i>
       </center>
     </div>
   </a>
@@ -36,7 +36,7 @@
   <a href="/links/new" class="item" >
     <div class="side-item">
       <center>
-          Add Link
+          <i class="fa fa-plus"> Add Link</i>
       </center>
     </div>
   </a>
@@ -44,14 +44,14 @@
   <a href="/tags" class="item">
     <div class="side-item">
       <center>
-          Tags
+          <i class="fa fa-slack"> Tags </i>
       </center>
   </div>
 
   <a href="/users" class="item">
     <div class="side-item">
       <center>
-          People
+          <i class="fa fa-user"> People</i>
       </center>
   </div>
   </a>

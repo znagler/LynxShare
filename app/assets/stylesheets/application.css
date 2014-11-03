@@ -12,7 +12,8 @@
  *= require_tree .
  */
 
-a,h2{
+a,h2,p{
+	text-decoration: none !important;
 	font-family: "PT Sans"
 }
 
@@ -38,7 +39,7 @@ width: 100px;
 	height: 30px;
 }
 .side-item:hover {
-    background-color: #BBBEBE;
+    background-color: #ECF0F1;
 }
 li {
 	list-style-type: none;
@@ -52,8 +53,8 @@ h2{
 	text-align: center
 }
 .card {
-	background:#FFF;
-	border-radius: 10px;
+	background:white;
+	border-radius: 4px;
 	border:1px solid #AAA;
 	border-bottom:1px solid #BBB;
 	padding:10px;
@@ -69,7 +70,32 @@ h2{
 .thezone {
 	width: 100%;
 }
-/*
-.vert-align {
-	margin-top: 50'
-}*/
+
+.custom-bar {
+	background-color: #2C3E50;
+}
+
+.red {
+	color: black;
+}
+i, .right-red {
+	font-family: "PT Sans";
+	color: #E74C3C;	
+}
+
+.button-red-outline {
+	line-height: 1;
+	color: #E74C3C;
+	background-color: white;
+	border-radius: 3px;
+	border: 2px solid #E74C3C;
+	transition-timing-function: ease-out;
+	transition-property: box-shadow,background-color;
+}
+
+.button-red-outline:hover {
+	border: 0px;
+	/*font-color: white;*/
+	/*background-color: #E74C3C;*/
+	background-color: #3498DB;
+}
