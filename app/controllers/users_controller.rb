@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     # @users = User.all.take(10)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def search
     user_array = fetch_users(10,current_user.id,params["currentString"])
     # binding.pry

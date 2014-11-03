@@ -10,6 +10,12 @@ class RelationshipsController < ApplicationController
     redirect_to '/users'
   end
 
+  def show
+
+    @user = User.find(params[:id])
+    @links = @user.links
+  end
+
   def destroy
     Relationship.find(params[:id]).destroy
     redirect_to '/relationships'

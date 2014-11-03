@@ -1,9 +1,9 @@
-  <% if @current_user %>
+  <% if session[:user_id] != nil %>
 
     <div>
       <center>
 
-    Welcome <%= @current_user.username %>
+    Welcome <%= User.find(session[:user_id]).username %>
       </center>
   </div>
 
