@@ -1,8 +1,11 @@
 <% links.each do |link| %>
 <div class="card">
-	<%= link_to link.url, link.url, class: "link red" %> <br>
+	<%= form_for(link, method: :delete) do |f| %>
+		<a href="javascript:{}" class="left red vert-align" onclick="document.getElementById('edit_link_<%= link.id %>').submit()" ><i class="fa fa-remove fa-fw"><% f.submit %></i></a>
+	<% end %>
+	<%= link_to link.url, link.url, class: "link" %> <br>
 	<% link.tags.each do |tag| %>
 		<%= link_to add_hashtag(tag.name), "/tags/#{tag.id}", class: "tag" %>
 	<% end %>
-</div>
+</div>    
 <% end %>
