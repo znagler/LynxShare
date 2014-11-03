@@ -1,10 +1,9 @@
 <div class="container-centered">
   <center>
-<h2> Tags</h2>
-<div >
-<input data-search="tagSearchBar" placeholder="find tags..." type="text" class="field-light"></div>
-<div id ="tagzone">
-<%= render(:partial => "tag_container", :locals => {:tags => @tags}) %>
-</div>
-</center>
-</div>
+    <h2> Tags</h2>
+    <%= render partial: "search" %>
+      <div id ="tagzone">
+        <%= render(:partial => "tag_container", :locals => {:tags => @tags}) %>
+      </div>
+    </center>
+  </div>
