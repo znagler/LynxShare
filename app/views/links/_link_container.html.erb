@@ -1,8 +1,8 @@
 <% links.each do |link| %>
 <div class="card">
-	<%= link_to link.url, link.url, class: "link" %> <br>
+	<%= link_to link.url, link.url, class: "link red" %> <br>
 	<% link.tags.each do |tag| %>
 		<%= link_to add_hashtag(tag.name), "/tags/#{tag.id}", class: "tag" %>
 	<% end %>
-</div>    
+</div>
 <% end %>
