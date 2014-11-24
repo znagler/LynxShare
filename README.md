@@ -7,5 +7,4 @@ Technologies
 ____________
 -Main project in rails
 -Rspec for tests
--Javascript / Jquery
--d3 technology for visualization
+-Javascript / Jquery / AJAX
